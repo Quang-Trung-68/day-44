@@ -49,9 +49,9 @@ function PropKey() {
               </div>
             ) : todos && todos.length > 0 ? (
               <ul className="space-y-3 max-h-[600px] overflow-y-auto pr-2">
-                {todos.map((todo) => (
+                {todos.map((todo, index) => (
                   <li
-                    key={todo.id}
+                    key={index}
                     className={`p-4 rounded-xl border-2 transition-all duration-200 hover:shadow-md ${
                       todo.completed
                         ? "bg-green-50 border-green-200"
@@ -67,7 +67,7 @@ function PropKey() {
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-1">
                           <span className="text-xs font-semibold text-gray-500">
-                            #{todo.id}
+                            #{index + 1}
                           </span>
                           <div className="flex items-center gap-1 text-xs text-gray-600 bg-gray-100 px-2 py-0.5 rounded-full">
                             <User className="w-3 h-3" />
