@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { ReactSortable } from "react-sortablejs";
 import { CheckCircle, Circle, GripVertical, User } from "lucide-react";
 
+import { truncateByWords } from "@/utils/string";
+
 function PropKey() {
   const { data: todos, isLoading: todoLoading } = useGetTodosQuery();
   const { data: postsData, isLoading: postLoading } = useGetPostsQuery();
@@ -144,7 +146,7 @@ function PropKey() {
                           </div>
                         </div>
                         <h3 className="font-semibold text-gray-800 mb-2 leading-snug">
-                          {post.title}
+                          {truncateByWords(post.title, 10)}
                         </h3>
                         <p className="text-sm text-gray-600 leading-relaxed line-clamp-2">
                           {post.body}
