@@ -5,11 +5,11 @@ import React, { Suspense } from "react";
 
 import Home from "./pages/Home";
 import LoadingFallback from "./components/LoadingFallback";
-import TestError from "./pages/TestError";
-import Sentry from "./pages/Sentry";
 
 const PropKey = React.lazy(() => import("./pages/PropKey"));
 const Counter = React.lazy(() => import("./pages/Counter"));
+const Sentry = React.lazy(() => import("./pages/Sentry"));
+const TestError = React.lazy(() => import("./pages/TestError"));
 
 zod.config(zod.locales.vi());
 
